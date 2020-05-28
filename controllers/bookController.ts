@@ -1,4 +1,5 @@
 import { Book } from '../utils/typeBook.ts'
+
 let books: Book[] = [
     {
         id: "1",
@@ -23,5 +24,4 @@ const getBooks = ({ response }: { response: any }) => {
         data: books
     }
 }
-
 export { getBooks }
