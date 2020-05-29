@@ -24,4 +24,23 @@ const getBooks = ({ response }: { response: any }) => {
         data: books
     }
 }
-export { getBooks }
+
+/**
+ *  detail ebook 
+ * param : @id
+ */
+const getBook = ({ params, response }: { params: { id: string }, response: any }) => {
+    const book: Book | undefined = books.find(b => b.id === params.id)
+    if (book) {
+        response.body = {
+            status: true,
+            data: book
+        }
+    } else {
+        response.body = {
+            status: false,
+            data: "book not found"
+        }
+    }
+}
+export { getBooks, getBook }

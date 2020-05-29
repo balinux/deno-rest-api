@@ -1,5 +1,5 @@
 import { Router } from 'https://deno.land/x/oak/mod.ts'
-import { getBooks, getbook } from '../controllers/bookController.ts'
+import { getBooks, getBook } from '../controllers/bookController.ts'
 
 const router = new Router()
 router.get('/', ({ response }: { response: any }) => {
@@ -7,5 +7,6 @@ router.get('/', ({ response }: { response: any }) => {
 })
 
 router.get('/api/v1/books', getBooks)
+.get('/api/v1/books/:id', getBook)
 
 export default router
