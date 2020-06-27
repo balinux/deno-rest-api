@@ -1,5 +1,8 @@
 # about
-simple Rest api with deno
+simple Rest api with deno with docker
+
+# How to run
+```docker build -t app . && docker run -it --init -p 8888:8000 app```
 
 # references project structure
 link : https://medium.com/swlh/making-apis-in-deno-83dedda9dd1f
