@@ -1,5 +1,5 @@
-import { v4 } from 'https://deno.land/std/uuid/mod.ts'
 import { Book } from '../utils/typeBook.ts'
+import { v4 } from 'https://deno.land/std/uuid/mod.ts'
 
 let books: Book[] = [
     {
@@ -54,12 +54,11 @@ const deleteBook = ({ params, response }: { params: { id: string }, response: an
 
 const addBook = async ({ request, response }: { request: any, response: any }) => {
     const body = await request.body()
-    
     if (!request.hasBody) {
         response.status = 400
         response.body = {
             success: false,
-            data: 'body is required'
+            data: "dibutuhkan body"
         }
     } else {
         const book: Book = body.value
@@ -72,4 +71,5 @@ const addBook = async ({ request, response }: { request: any, response: any }) =
         }
     }
 }
+
 export { getBooks, getBook, deleteBook, addBook }
